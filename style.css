@@ -421,3 +421,19 @@ h2 {
 .projects-scroll .project-card {
     flex: 0 0 320px;
 }
+/* Projetos em rolagem horizontal no celular */
+@media (max-width: 768px) {
+    .projects-scroll {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .projects-scroll .project-card {
+        flex: 0 0 85%;
+        width: 85%;
+    }
+}
