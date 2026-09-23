@@ -410,3 +410,14 @@ h2 {
     border-radius: 12px;
     object-fit: contain;
 }
+.projects-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.projects-scroll .project-card {
+    flex: 0 0 320px;
+}
