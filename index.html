@@ -1,219 +1,278 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Guilherme Digital | Sites, Vídeos e Design</title>
-  <meta
-    name="description"
-    content="Guilherme Digital oferece criação de sites de apresentação, edição simples de vídeos e criação de logos e materiais digitais."
-  >
+  <!-- ===== SEO: título e descrição que aparecem no Google ===== -->
+  <title>CT Team Maromba | Academia em Itupeva - SP</title>
+  <meta name="description" content="CT Team Maromba: academia em Itupeva, SP. Força, disciplina e evolução. Conheça também Suzana Molena, atleta e preparadora de fisiculturismo. Horários, convênios (Wellhub e TotalPass), localização e WhatsApp.">
+  <meta name="theme-color" content="#0a0a0a">
 
-  <link rel="stylesheet" href="style.css">
+  <!-- ===== Compartilhamento em redes sociais =====
+       IMPORTANTE: depois de publicar, troque os endereços abaixo pelo
+       endereço completo do seu site (ex.: https://seuusuario.github.io/ct-team-maromba/) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="CT Team Maromba | Academia em Itupeva - SP">
+  <meta property="og:description" content="Força, disciplina e evolução. Conheça a CT Team Maromba em Itupeva, SP.">
+  <meta property="og:image" content="assets/images/og-logo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon (gerado a partir da logo oficial) -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-192.png">
+
+  <!-- Fontes (Google Fonts, gratuitas). Se não carregarem, o site usa fontes do sistema. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Dados estruturados para buscadores (só informações confirmadas) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "CT Team Maromba",
+    "description": "Academia em Itupeva, SP.",
+    "telephone": "+55 11 95428-1994",
+    "foundingDate": "2016",
+    "image": "assets/images/og-logo.jpg",
+    "sameAs": ["https://www.instagram.com/ctteammaromba/"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua José Virillo, 410 - Bairro Santa Fé",
+      "addressLocality": "Itupeva",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "06:00", "closes": "12:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "13:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "06:00", "closes": "12:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "13:30", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00" }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-  <header class="header">
-    <nav class="nav container">
-      <a class="logo" href="#inicio">Guilherme<span>Digital</span></a>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-      <div class="nav-links">
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-      </div>
-    </nav>
+  <!-- ================= MENU ================= -->
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="CT Team Maromba — início">
+        <img src="assets/images/logo-600.webp" alt="" width="52" height="52">
+        <span class="brand-name">CT Team <b>Maromba</b></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuPrincipal" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="menuPrincipal" aria-label="Menu principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#essencia">Essência</a></li>
+          <li><a href="#modalidades">Modalidades</a></li>
+          <li><a href="#horarios">Horários</a></li>
+          <li><a href="#convenios">Convênios</a></li>
+          <li><a class="btn btn-small js-whatsapp" href="#contato" target="_blank" rel="noopener">Fale conosco</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero container" id="inicio">
-      <p class="eyebrow">SOLUÇÕES DIGITAIS</p>
+  <main id="conteudo">
 
-      <h1>Seu projeto digital, com cuidado em cada detalhe.</h1>
+    <!-- ================= PÁGINA INICIAL (HERO) ================= -->
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <!-- Vídeo oficial. Para trocar: substitua assets/videos/hero.mp4 e hero.webm (ou edite os caminhos abaixo). -->
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata"
+             poster="assets/images/hero-poster.jpg" aria-hidden="true" tabindex="-1">
+        <source src="assets/videos/hero.webm" type="video/webm">
+        <source src="assets/videos/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
 
-      <p class="hero-text">
-        Criação de sites de apresentação, edição de vídeos e design
-        digital para pessoas e pequenos negócios que desejam apresentar
-        suas ideias de forma simples e profissional.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="button" href="#servicos">Conheça meus serviços</a>
-        <a class="button button-outline" href="#contato">Entre em contato</a>
-      </div>
-    </section>
-
-    <section class="section container" id="servicos">
-      <p class="eyebrow">MEUS SERVIÇOS</p>
-      <h2>Como posso ajudar</h2>
-
-      <p class="section-text">
-        Serviços digitais para tirar ideias do papel e ajudar você
-        a apresentar seu trabalho na internet.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <div class="service-number">01</div>
-          <h3>Sites de apresentação</h3>
-          <p>
-            Criação de sites simples e responsivos para apresentar
-            empresas, profissionais, serviços, projetos ou portfólios.
-          </p>
-          <span class="tag">HTML e CSS</span>
-        </article>
-
-        <article class="card">
-          <div class="service-number">02</div>
-          <h3>Edição de vídeos</h3>
-          <p>
-            Edição simples de vídeos, cortes, montagem, transições
-            e aplicação de efeitos visuais para conteúdos digitais.
-          </p>
-          <span class="tag">Edição e efeitos</span>
-        </article>
-
-        <article class="card">
-          <div class="service-number">03</div>
-          <h3>Logos e design digital</h3>
-          <p>
-            Criação de propostas visuais, logos e materiais digitais
-            para ajudar a transmitir a identidade de uma marca.
-          </p>
-          <span class="tag">Design em desenvolvimento</span>
-        </article>
-
-        <article class="card">
-          <div class="service-number">04</div>
-          <h3>Apoio digital</h3>
-          <p>
-            Digitação, pesquisas online e organização de arquivos
-            e informações digitais, conforme a necessidade do projeto.
-          </p>
-          <span class="tag">Organização e suporte</span>
-        </article>
-      </div>
-
-      <p class="note">
-        Os serviços são realizados conforme o escopo combinado
-        previamente com cada cliente.
-      </p>
-    </section>
-
-    <section class="section about" id="sobre">
-      <div class="container about-grid">
-        <div>
-          <p class="eyebrow">SOBRE MIM</p>
-          <h2>Prazer, sou o Guilherme.</h2>
-
-          <p class="section-text">
-            Sou Guilherme Cyrillo e estou construindo minha trajetória
-            como freelancer na área digital. Tenho interesse em
-            tecnologia, criação de conteúdo e desenvolvimento de
-            projetos práticos.
-          </p>
-
-          <p class="section-text">
-            Meu objetivo é oferecer serviços com atenção aos detalhes,
-            responsabilidade e comunicação transparente, buscando
-            entender o que cada cliente precisa.
-          </p>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Academia • Itupeva - SP • Desde <span class="js-fundacao">2016</span></p>
+          <h1 id="hero-titulo"><span class="metal">CT Team</span> <span class="red">Maromba</span></h1>
+          <p class="hero-slogan">Força. Disciplina. Evolução.</p>
+          <p class="hero-lead">Uma academia em Itupeva para quem leva o treino a sério. Venha conhecer o espaço e começar a sua evolução.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#sobre">Conhecer a academia</a>
+            <a class="btn btn-outline js-whatsapp" href="#contato" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8s-.4-.1-.6.100l-.8 1c-.1.200-.3.200-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.300 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.5-.3z"/></svg>
+              WhatsApp
+            </a>
+          </div>
         </div>
 
-        <aside class="about-card">
-          <h3>Conhecimentos</h3>
-          <ul>
-            <li>HTML e CSS — fundamentos</li>
-            <li>JavaScript — conhecimentos básicos</li>
-            <li>Edição de vídeos — montagem e efeitos simples</li>
-            <li>Design digital — em desenvolvimento</li>
-            <li>Inglês — conhecimentos em desenvolvimento</li>
-          </ul>
-        </aside>
+        <!-- Logo oficial (proporção original preservada) -->
+        <div class="hero-logo">
+          <img src="assets/images/logo.webp" alt="Logo oficial da CT Team Maromba: caveira metálica com as letras CT, brasão com o lema Força e Honra" width="1254" height="1254" fetchpriority="high">
+        </div>
+      </div>
+
+      <button class="video-toggle" id="videoToggle" type="button" aria-label="Pausar vídeo de fundo">
+        <span class="vt-icon" aria-hidden="true"></span>
+      </button>
+      <a class="scroll-hint" href="#sobre" aria-label="Rolar para baixo"><span></span></a>
+    </section>
+
+    <!-- ================= SOBRE ================= -->
+    <section class="section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Conheça</p>
+          <h2 id="sobre-titulo">Sobre a <span class="red">academia</span></h2>
+        </header>
+        <p class="section-intro reveal" id="sobreIntro"></p>
+        <div class="about-grid" id="sobreBlocos"></div>
+        <div class="about-photos" id="sobreFotos"></div>
       </div>
     </section>
 
-    <section class="section container" id="projetos">
-      <p class="eyebrow">PORTFÓLIO</p>
-      <h2>Projetos e trabalhos</h2>
-
-      <p class="section-text">
-        Estou preparando meus primeiros projetos demonstrativos.
-        Em breve, esta seção poderá apresentar exemplos de sites,
-        vídeos editados e materiais de design.
-      </p>
-<div class="projects-scroll">
-  <div class="project-card">
-
-    <a href="imagens/banner-ma.jpeg"
-       target="_blank"
-       rel="noopener noreferrer">
-
-        <img src="imagens/banner-ma.jpeg"
-             alt="Banner de divulgação dos serviços de terapia integrativa"
-             class="project-image">
-
-    </a>
-
-    <h3>Banner de divulgação</h3>
-    <p>Material de design criado para divulgação de serviços.</p>
-
-</div>
-<div class="project-card">
-
-    <a href="https://guilhermedigital.github.io/marcia-tratamento/"
-       target="_blank"
-       rel="noopener noreferrer">
-
-        <img src="imagens/site-ma.jpeg"
-             alt="Prévia do site Marcia - Terapias Integrativas"
-             class="project-image">
-
-    </a>
-
-    <h3>Site Marcia — Terapias Integrativas</h3>
-
-    <p>Site institucional desenvolvido para apresentar os serviços de terapias integrativas e facilitar o contato com clientes.</p>
-
-</div>
-</div>
+    <!-- ================= NOSSA ESSÊNCIA (textos em js/dados.js → ESSENCIA) ================= -->
+    <section class="section section-alt" id="essencia" aria-labelledby="essencia-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Quem somos</p>
+          <h2 id="essencia-titulo">Nossa <span class="red">essência</span></h2>
+        </header>
+        <div class="essence reveal" id="essenciaConteudo"></div>
+      </div>
     </section>
 
-    <section class="section container" id="contato">
-      <div class="contact-box">
-        <p class="eyebrow">CONTATO</p>
-        <h2>Tem uma ideia? Vamos conversar.</h2>
+    <!-- ================= PERFIL DA SUZANA (aparece só quando ativado em js/dados.js) ================= -->
+    <section class="section" id="suzana" aria-labelledby="suzana-titulo" hidden>
+      <div class="container" id="suzanaConteudo"></div>
+    </section>
 
-        <p class="section-text">
-          Entre em contato para apresentar seu projeto ou conversar
-          sobre como posso ajudar.
-        </p>
+    <!-- ================= MODALIDADES ================= -->
+    <section class="section" id="modalidades" aria-labelledby="modalidades-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Treinos</p>
+          <h2 id="modalidades-titulo">Modalidades e <span class="red">treinamentos</span></h2>
+        </header>
+        <div class="mod-wrap" id="modalidadesLista"></div>
+      </div>
+    </section>
 
-        <a
-  class="button"
-  href="https://mail.google.com/mail/?view=cm&to=guilhermedigital87@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Enviar um e-mail
-</a>
+    <!-- ================= HORÁRIOS ================= -->
+    <section class="section section-alt" id="horarios" aria-labelledby="horarios-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Funcionamento</p>
+          <h2 id="horarios-titulo">Horários de <span class="red">funcionamento</span></h2>
+        </header>
+        <ul class="hours" id="horariosLista"></ul>
+      </div>
+    </section>
 
-        <p class="email">
-          guilhermedigital87@gmail.com
-        </p>
+    <!-- ================= CONVÊNIOS ================= -->
+    <section class="section" id="convenios" aria-labelledby="convenios-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Parcerias</p>
+          <h2 id="convenios-titulo">Convênios <span class="red">aceitos</span></h2>
+        </header>
+        <ul class="partners" id="conveniosLista"></ul>
+      </div>
+    </section>
 
-        <p class="contact-note">
-          WhatsApp profissional: em breve
-        </p>
+    <!-- ================= CONTATO ================= -->
+    <section class="section section-alt" id="contato" aria-labelledby="contato-titulo">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Fale conosco</p>
+          <h2 id="contato-titulo">Contato e <span class="red">localização</span></h2>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="contact-item">
+              <h3>WhatsApp</h3>
+              <p class="js-whatsapp-texto"></p>
+              <a class="btn js-whatsapp" href="#contato" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+            </div>
+            <div class="contact-item">
+              <h3>Instagram</h3>
+              <p class="js-instagram-texto"></p>
+              <a class="btn btn-outline js-instagram" href="#contato" target="_blank" rel="noopener">Abrir Instagram</a>
+            </div>
+            <div class="contact-item">
+              <h3>Endereço</h3>
+              <address class="js-endereco"></address>
+              <a class="btn btn-outline js-maps" href="#contato" target="_blank" rel="noopener">Abrir no Google Maps</a>
+            </div>
+          </div>
+
+          <div class="map-wrap reveal">
+            <iframe id="mapa" title="Mapa com a localização da CT Team Maromba em Itupeva" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <p class="note">O mapa é pesquisado pelo endereço informado. Para ver o ponto exato, use o botão “Abrir no Google Maps”.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2026 Guilherme Digital. Todos os direitos reservados.</p>
-    <p>Feito com dedicação por Guilherme Cyrillo.</p>
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/logo-600.webp" alt="Logo da CT Team Maromba" width="72" height="72" loading="lazy">
+        <div>
+          <strong>CT Team Maromba</strong>
+          <span>Força e Honra • Desde <span class="js-fundacao">2016</span></span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Endereço</h3>
+        <address class="js-endereco"></address>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <ul class="footer-links">
+          <li><a class="js-whatsapp" href="#contato" target="_blank" rel="noopener"><span class="js-whatsapp-texto"></span></a></li>
+          <li><a class="js-instagram" href="#contato" target="_blank" rel="noopener">@<span class="js-instagram-usuario"></span></a></li>
+        </ul>
+        <p class="footer-conv">Convênios: <span class="js-convenios-texto"></span></p>
+      </div>
+    </div>
+    <p class="copyright">© <span id="ano"></span> CT Team Maromba. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Botão flutuante do WhatsApp (sempre visível) -->
+  <a class="float-wa js-whatsapp" href="#contato" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8s-.4-.1-.6.100l-.8 1c-.1.200-.3.200-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.300 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.5-.3z"/></svg>
+  </a>
+
+  <!-- Janela para ampliar as fotos da Suzana -->
+  <dialog class="lightbox" id="lightbox" aria-label="Visualização ampliada">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Fechar">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Anterior">‹</button>
+    <figure id="lbConteudo"></figure>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Próxima">›</button>
+  </dialog>
+
+  <noscript>
+    <p style="padding:1rem;text-align:center;background:#111;color:#fff">
+      Ative o JavaScript para ver todo o conteúdo. WhatsApp: +55 11 95428-1994 · Instagram: @ctteammaromba
+    </p>
+  </noscript>
+
+  <!-- Ordem importa: primeiro os dados, depois o script que usa os dados -->
+  <script src="js/dados.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
